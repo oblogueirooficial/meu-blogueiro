@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Lock, MessageCircle, ArrowRight, CreditCard, ExternalLink } from 'lucide-react';
+import { X, Lock, ArrowRight, CreditCard } from 'lucide-react';
 
 interface PixModalProps {
   isOpen: boolean;
@@ -13,14 +13,14 @@ const PixModal: React.FC<PixModalProps> = ({ isOpen, onClose, onSuccess }) => {
 
   if (!isOpen) return null;
 
-  // --- CONFIGURAÇÃO PRONTA ---
-  // Seu link já está configurado aqui:
+  // --- CONFIGURAÇÃO CORRETA DO LINK ---
+  // Use apenas o link curto, sem prefixos extras
   const MERCADO_PAGO_LINK = "https://mpago.la/1ioMAkj"; 
   const SECRET_CODE = "VIP2024"; 
   // ---------------------------
 
   const handleOpenPayment = () => {
-    // Abre o seu link em uma nova aba
+    // Abre o link direto do Mercado Pago
     window.open(MERCADO_PAGO_LINK, '_blank');
   };
 
